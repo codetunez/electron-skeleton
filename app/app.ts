@@ -1,6 +1,7 @@
 import {bootstrap} from 'angular2/platform/browser';
 import {provide, Component} from 'angular2/core';
 import {NgClass, NgStyle} from 'angular2/common';
+import {HTTP_PROVIDERS} from 'angular2/http';
 import {Router, APP_BASE_HREF, RouteConfig, RouterLink, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 
 import {Home} from './home/home';
@@ -40,6 +41,7 @@ bootstrap(
   App,
   [
     ROUTER_PROVIDERS,
+    HTTP_PROVIDERS,
     provide(LocationStrategy, { useClass: HashLocationStrategy })
   ]
 );
